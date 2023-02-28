@@ -1,7 +1,7 @@
 import os
 from wtforms import StringField, SubmitField, URLField, SelectField
 from flask import Flask, render_template, redirect, url_for, request
-from flask_bootstrap import Bootstrap5
+from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired
@@ -9,7 +9,7 @@ from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
-Bootstrap5(app)
+Bootstrap(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
